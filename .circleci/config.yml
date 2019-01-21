@@ -13,13 +13,17 @@
 
 version: 2
 jobs:
+  build:
+    machine: true
+
   test:
-      override:    
-        - mocha
+    override:    
+      - mocha
 
 workflows:
   version: 2
   build_and_test:
     jobs:
+      - build
       - test
 
